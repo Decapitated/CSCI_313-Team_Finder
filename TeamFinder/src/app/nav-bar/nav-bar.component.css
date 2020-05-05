@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  background-color: #07030D;
+  color: white;
+}
+
+.left, .right, .center {
+  width: 33.33%;
+  height: 100%;
+}
+
+.brand {
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  font-weight: bold;
+}
