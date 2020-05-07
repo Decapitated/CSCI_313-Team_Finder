@@ -29,8 +29,4 @@ export class PartyViewerComponent implements OnInit {
   openViewer(){
     this.viewParty = !this.viewParty;
   }
-
-  getNumPlayers(): number {
-    return 1 + this.party.reservedPlayers + this.party.members.length;
-  }
 }

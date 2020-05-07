@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
     title: 'Leviathan Raid',
     description: 'I need a full fireteam.',
     game: 'Destiny 2',
-    maxPlayers: 6, reservedPlayers: 2,
+    maxPlayers: 6, reservedPlayers: 5,
     members: []
   };
 
@@ -24,4 +24,8 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getNumPlayers(): number {
+    console.log(1 + this.party.reservedPlayers + this.party.members.length);
+    return 1 + this.party.reservedPlayers + this.party.members.length;
+  }
 }
