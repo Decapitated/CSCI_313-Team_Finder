@@ -3,6 +3,8 @@
   height: 5rem;
   background-color: #07030D;
   color: white;
+  position: absolute;
+  top: 0;
 }
 
 .wrapper {
@@ -18,7 +20,7 @@
 }
 
 .drop-green {
-  box-shadow: 0 0 15px 0 red;
+  box-shadow: 0 0 15px 0 greenyellow;
 }
 
 .left, .right, .center {
@@ -26,9 +28,17 @@
   height: 100%;
 }
 
+.right {
+  text-align: right;
+}
+
 .brand {
   margin-left: 2rem;
   font-size: 1.5rem;
   line-height: 5rem;
   font-weight: bold;
+}
+
+.center {
+
 }

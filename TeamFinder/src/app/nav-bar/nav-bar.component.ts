@@ -15,7 +15,7 @@ export class NavBarComponent implements OnInit {
     title: 'Leviathan Raid',
     description: 'I need a full fireteam.',
     game: 'Destiny 2',
-    maxPlayers: 6, reservedPlayers: 5,
+    maxPlayers: 6, reservedPlayers: 4,
     members: []
   };
 
