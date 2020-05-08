@@ -24,10 +24,13 @@
 .bar > .details {
   color: #BAB7BD;
 }
+.bar > .game, .bar > .details {
+  display: inline;
+  white-space: nowrap;
+}
 
 .dropdown {
-  position: absolute;
-  width: 33.33%;
+  padding: 1rem;
   z-index: 1;
   background-color: #383241;
   border-radius: 0 0 10px 10px;

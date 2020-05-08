@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Party } from '../party';
 
 @Component({
@@ -8,16 +8,7 @@ import { Party } from '../party';
 })
 export class NavBarComponent implements OnInit {
 
-  party: Party = {
-    id: 0,
-    owner: 'headlessdev',
-    created: new Date(),
-    title: 'Leviathan Raid',
-    description: 'I need a full fireteam.',
-    game: 'Destiny 2',
-    maxPlayers: 6, reservedPlayers: 4,
-    members: []
-  };
+  @Input() party: Party;
 
   constructor() { }
 
@@ -25,7 +16,6 @@ export class NavBarComponent implements OnInit {
   }
 
   getNumPlayers(): number {
-    console.log(1 + this.party.reservedPlayers + this.party.members.length);
     return 1 + this.party.reservedPlayers + this.party.members.length;
   }
 }
