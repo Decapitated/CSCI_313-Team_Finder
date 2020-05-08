@@ -1,0 +1,41 @@
+:host {
+  height: 3rem;
+}
+
+.bar {
+  text-align: center;
+  background-color: #383241;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  padding: 0.5rem;
+  margin: 0.8rem;
+}
+
+.bar > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.bar > .game {
+  color: white;
+  font-weight: bold;
+}
+.bar > .details {
+  color: #BAB7BD;
+}
+.bar > .game, .bar > .details {
+  display: inline;
+  white-space: nowrap;
+}
+
+.dropdown {
+  padding: 1rem;
+  z-index: 1;
+  background-color: #383241;
+  border-radius: 0 0 10px 10px;
+}
+
+/*:host:hover .dropdown {
+  display: block;
+}*/
