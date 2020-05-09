@@ -1,0 +1,58 @@
+.main {
+  background-color: #0D0715;
+  display: flex;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.avatar {
+  width: fit-content;
+}
+
+.details {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.details > .game {
+  font-weight: bold;
+}
+
+.details > .mission {
+  color: #ABA8AD;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.button > button {
+  background-color: #28A745;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.numPlayers, .arrow {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+.numPlayers {
+  font-size: x-large;
+}
+.arrow > span {
+  cursor: pointer;
+}

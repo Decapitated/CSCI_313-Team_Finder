@@ -2,5 +2,36 @@
   margin-top: 5rem;
   height: calc(100vh - 5rem);
   overflow-y: auto;
-  padding: 0 1rem;
+  overflow-x: hidden;
+}
+
+.jumbo {
+  display: flex;
+  flex-direction: row;
+  background-color: #130E1C;
+  height: fit-content;
+  margin: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.recent, .almost {
+  width: 50%;
+  height: 100%;
+  padding: 1rem;
+}
+
+.recent > .parties, .almost > .parties {
+  overflow-y: auto;
+  height: 25rem;
+}
+
+.parties::-webkit-scrollbar {
+    width: 5px;
+}
+.parties::-webkit-scrollbar-thumb {
+  background-color: white;
+}
+.parties::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }

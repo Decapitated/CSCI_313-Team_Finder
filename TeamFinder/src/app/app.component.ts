@@ -15,7 +15,7 @@ export class AppComponent {
     title: 'Leviathan Raid',
     description: 'I need a full fireteam.',
     game: 'Destiny 2',
-    maxPlayers: 6, reservedPlayers: 4,
+    maxPlayers: 6, reservedPlayers: 2,
     members: ['joe_demajio']
   };
 }

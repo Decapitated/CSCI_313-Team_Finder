@@ -1,1 +1,27 @@
-<p>party works! Awesome!</p>
+<div class="main">
+  <div class="avatar">
+    <svg width="3.5rem" height="3.5rem">
+      <circle cx="1.75rem" cy="1.75rem" r="1.75rem" fill="yellow" />
+    </svg>
+  </div>
+  <div class="details">
+    <span class="game">{{party.game}}</span>
+    <span class="mission">{{party.title}}</span>
+  </div>
+  <div class="button">
+    <button>JOIN</button>
+  </div>
+  <div class="numPlayers">
+    <span>{{1 + party.reservedPlayers + party.members.length}}/{{party.maxPlayers}}</span>
+  </div>
+  <div class="arrow">
+    <span (click) = "openViewer()" *ngIf="!viewParty; else notView">&#9660;</span>
+    <ng-template #notView><span (click) = "openViewer()">&#9650;</span></ng-template>
+  </div>
+</div>
+<div class="dropdown" *ngIf = "viewParty">
+  <app-player></app-player>
+  <app-player></app-player>
+  <app-player></app-player>
+  <app-player [waiting]="true"></app-player>
+</div>
