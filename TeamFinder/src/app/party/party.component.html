@@ -20,8 +20,8 @@
   </div>
 </div>
 <div class="dropdown" *ngIf = "viewParty">
-  <app-player></app-player>
-  <app-player></app-player>
-  <app-player></app-player>
-  <app-player [waiting]="true"></app-player>
+  <app-player [player] = "party.owner"></app-player>
+  <app-player *ngFor="let res of reserved"></app-player>
+  <app-player *ngFor="let mem of party.members" [player] = "mem"></app-player>
+  <app-player *ngFor="let wait of waiting" [waiting]="true"></app-player>
 </div>
