@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { PARTIES } from './mock-parties';
 import { Party } from './party';
 
@@ -10,6 +10,10 @@ export class PartyService {
   parties: Party[] = PARTIES;
   recentParties: Party[];
   almostFullParties: Party[];
+
+  @Output() joinedParty = new EventEmitter<Party>();
+  @Output() leftParty = new EventEmitter<Party>();
+
   constructor() {
     this.getRecentParties();
     this.getAlmostFullParties();
@@ -18,23 +22,30 @@ export class PartyService {
   getRecentParties() {
     this.recentParties = this.parties.sort((party1, party2) => {
       if (party1.created > party2.created) {
-          return 1;
-      }
-
-      if (party1.created < party2.created) {
           return -1;
       }
-
+      if (party1.created < party2.created) {
+          return 1;
+      }
       return 0;
     });
-    console.log(this.recentParties);
   }
 
   getAlmostFullParties() {
     this.almostFullParties = this.parties.filter(
       (party: Party) => {
-        console.log(`(${1 + party.reservedPlayers + party.members.length}) === (${party.maxPlayers - 1})`);
-        return (1 + party.reservedPlayers + party.members.length) === (party.maxPlayers - 1);
-      });
+        return (1 + party.reservedPlayers + party.members.size) === (party.maxPlayers - 1);
+      }
+    );
+  }
+
+  joinParty(party: Party, user: string) {
+    party.members.add(user);
+    this.joinedParty.emit(party);
+  }
+
+  leaveParty(party: Party, user: string) {
+    party.members.delete(user);
+    this.leftParty.emit(party);
   }
 }

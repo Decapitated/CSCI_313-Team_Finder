@@ -9,7 +9,7 @@ export const PARTIES: Party[] = [
     game: 'Call of Duty Modern Warfare',
     maxPlayers: 6,
     reservedPlayers: 3,
-    members: [] },
+    members: new Set() },
   { id: 12,
     owner: 'CrookedSharpshooter',
     created: new Date('5/7/2020'),
@@ -18,7 +18,7 @@ export const PARTIES: Party[] = [
     game: 'Halo 3',
     maxPlayers: 4,
     reservedPlayers: 1,
-    members: [] },
+    members: new Set() },
   { id: 13,
     owner: 'TransonicMosquito',
     created: new Date('5/6/2020'),
@@ -27,7 +27,7 @@ export const PARTIES: Party[] = [
     game: 'Rocket League',
     maxPlayers: 4,
     reservedPlayers: 1,
-    members: [] },
+    members: new Set() },
   { id: 14,
     owner: 'WickedAtom',
     created: new Date('5/8/2020'),
@@ -36,7 +36,7 @@ export const PARTIES: Party[] = [
     game: 'Destiny 2',
     maxPlayers: 6,
     reservedPlayers: 2,
-    members: [] },
+    members: new Set() },
   { id: 15,
     owner: 'ThermionicFrog',
     created: new Date('5/4/2020'),
@@ -45,5 +45,5 @@ export const PARTIES: Party[] = [
     game: '7 Days to Die',
     maxPlayers: 4,
     reservedPlayers: 2,
-    members: [] }
+    members: new Set() }
 ];

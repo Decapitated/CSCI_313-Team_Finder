@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
     description: 'I need a full fireteam.',
     game: 'Destiny 2',
     maxPlayers: 6, reservedPlayers: 2,
-    members: ['joe_demajio']
+    members: new Set<string>().add('joe_demajio')
   };
 
   recentParties: Party[];
@@ -27,5 +27,15 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.recentParties = this.partyService.recentParties;
     this.almostFullParties = this.partyService.almostFullParties;
+
+    this.partyService.joinedParty.subscribe((party: Party) => {
+      this.party.members.delete('headlessdev');
+      this.party = party;
+    });
+
+    this.partyService.leftParty.subscribe((party: Party) => {
+      this.party.members.delete('headlessdev');
+      this.party = undefined;
+    });
   }
 }

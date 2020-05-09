@@ -7,5 +7,5 @@ export interface Party {
   game: string;
   maxPlayers: number;
   reservedPlayers: number;
-  members: string[];
+  members: Set<string>;
 }

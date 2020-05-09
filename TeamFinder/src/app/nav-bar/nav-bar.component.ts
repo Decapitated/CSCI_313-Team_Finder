@@ -16,6 +16,6 @@ export class NavBarComponent implements OnInit {
   }
 
   getNumPlayers(): number {
-    return 1 + this.party.reservedPlayers + this.party.members.length;
+    return 1 + this.party.reservedPlayers + this.party.members.size;
   }
 }
