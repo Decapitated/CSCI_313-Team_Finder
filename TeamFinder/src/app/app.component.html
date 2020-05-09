@@ -4,31 +4,13 @@
     <div class="recent">
       <h1>Recently Created</h1>
       <div class="parties">
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
+        <app-party *ngFor = "let party of recentParties" [party] = "party"></app-party>
       </div>
     </div>
     <div class="almost">
       <h1>Almost Full</h1>
       <div class="parties">
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
-        <app-party [party] = "party"></app-party>
+        <app-party *ngFor = "let party of almostFullParties" [party] = "party"></app-party>
       </div>
     </div>
   </div>

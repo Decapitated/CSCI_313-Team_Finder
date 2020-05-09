@@ -12,7 +12,7 @@ export class PartyComponent implements OnInit {
   viewParty = false;
   reserved: number[] = [];
   waiting: number[] = [];
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
     for (let i = 0; i < this.party.reservedPlayers; i++) {

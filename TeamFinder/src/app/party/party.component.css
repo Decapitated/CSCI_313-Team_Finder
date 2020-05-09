@@ -56,3 +56,7 @@
 .arrow > span {
   cursor: pointer;
 }
+
+.dropdown {
+  margin-top: -1rem;
+}
