@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Party } from '../party';
 
 @Component({
   selector: 'app-party',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PartyComponent implements OnInit {
 
+  @Input() party: Party;
+  viewParty = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  openViewer(){
+    this.viewParty = !this.viewParty;
+  }
 }

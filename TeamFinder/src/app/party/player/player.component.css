@@ -1,0 +1,23 @@
+:host {
+  background-color: #1C1723;
+  display: flex;
+  padding: 0.5rem;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #363040;
+}
+
+.avatar {
+  width: fit-content;
+  height: fit-content;
+  font-size: xx-large;
+}
+
+.name {
+  font-weight: bold;
+  padding-left: 1rem;
+}
+
+.defocus {
+  color: #BAB7BD;
+}

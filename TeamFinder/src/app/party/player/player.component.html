@@ -1,0 +1,14 @@
+<div class="avatar">
+  <div *ngIf = "player; else noPlayerAvatar">
+    <svg width="2.5rem" height="2.5rem">
+      <circle cx="1.25rem" cy="1.25rem" r="1.25rem" fill="yellow" />
+    </svg>
+  </div>
+  <ng-template #noPlayerAvatar>{{waiting ? '👤' : '👽'}}</ng-template>
+</div>
+<div class="name" [ngClass] = "{'defocus': waiting}">
+  <div *ngIf = "player; else noPlayerName">
+    {{player}}
+  </div>
+  <ng-template #noPlayerName>{{waiting ? 'Waiting for player...' : 'Reserved Player'}}</ng-template>
+</div>
