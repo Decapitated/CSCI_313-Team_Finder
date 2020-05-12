@@ -9,10 +9,12 @@
     <span class="mission">{{party.title}}</span>
   </div>
   <div class="button">
-    <button>JOIN</button>
+    <div *ngIf = "!joinedParty;then joined else notJoined"></div>
+    <ng-template #joined><button class="green" (click) = "joinParty()">JOIN</button></ng-template>
+    <ng-template #notJoined><button class="red" (click) = "leaveParty()">LEAVE</button></ng-template>
   </div>
   <div class="numPlayers">
-    <span>{{1 + party.reservedPlayers + party.members.length}}/{{party.maxPlayers}}</span>
+    <span>{{1 + party.reservedPlayers + party.members.size}}/{{party.maxPlayers}}</span>
   </div>
   <div class="arrow">
     <span (click) = "openViewer()" *ngIf="!viewParty; else notView">&#9660;</span>
@@ -23,5 +25,5 @@
   <app-player [player] = "party.owner"></app-player>
   <app-player *ngFor="let res of reserved"></app-player>
   <app-player *ngFor="let mem of party.members" [player] = "mem"></app-player>
-  <app-player *ngFor="let wait of waiting" [waiting]="true"></app-player>
+  <div *ngIf="waiting.length > 0"><app-player *ngFor="let wait of waiting" [waiting]="true"></app-player></div>
 </div>

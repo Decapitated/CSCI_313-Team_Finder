@@ -34,7 +34,6 @@
 }
 
 .button > button {
-  background-color: #28A745;
   padding: 0.5rem 0.75rem;
   border-radius: 2rem;
   border: none;
@@ -43,6 +42,13 @@
   font-size: medium;
   letter-spacing: 1px;
   cursor: pointer;
+}
+
+button.green {
+  background-color: #28A745;
+}
+button.red {
+  background-color: red;
 }
 
 .numPlayers, .arrow {
@@ -55,4 +61,8 @@
 }
 .arrow > span {
   cursor: pointer;
+}
+
+.dropdown {
+  margin-top: -1rem;
 }
