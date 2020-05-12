@@ -9,7 +9,7 @@
     <span class="mission">{{party.title}}</span>
   </div>
   <div class="button">
-    <div *ngIf = "!joinedParty;then joined else notJoined"></div>
+    <div *ngIf = "!joinedParty; then joined else notJoined"></div>
     <ng-template #joined><button class="green" (click) = "joinParty()">JOIN</button></ng-template>
     <ng-template #notJoined><button class="red" (click) = "leaveParty()">LEAVE</button></ng-template>
   </div>

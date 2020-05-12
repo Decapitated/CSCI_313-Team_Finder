@@ -24,6 +24,13 @@ export class PartyComponent implements OnInit {
     for (let i = 0; i < this.party.maxPlayers - numPlayers; i++){
       this.waiting.push(0);
     }
+
+    this.partyService.joinedParty.subscribe((party: Party) => {
+      if (party !== this.party && this.joinedParty) {
+        this.joinedParty = false;
+        this.waiting.push(0);
+      }
+    });
   }
 
   openViewer(){
@@ -33,10 +40,12 @@ export class PartyComponent implements OnInit {
   joinParty() {
     this.partyService.joinParty(this.party, 'headlessdev');
     this.joinedParty = true;
+    this.waiting.pop();
   }
 
   leaveParty() {
     this.partyService.leaveParty(this.party, 'headlessdev');
     this.joinedParty = false;
+    this.waiting.push(0);
   }
 }

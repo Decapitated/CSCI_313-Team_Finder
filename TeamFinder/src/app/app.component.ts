@@ -9,6 +9,7 @@ import { PartyService } from './party.service';
 })
 export class AppComponent implements OnInit {
   title = 'TeamFinder';
+  joinedParty = false;
   party: Party = {
     id: 0,
     owner: 'headlessdev',
@@ -31,11 +32,12 @@ export class AppComponent implements OnInit {
     this.partyService.joinedParty.subscribe((party: Party) => {
       this.party.members.delete('headlessdev');
       this.party = party;
+      this.joinedParty = true;
     });
 
     this.partyService.leftParty.subscribe((party: Party) => {
       this.party.members.delete('headlessdev');
-      this.party = undefined;
+      this.joinedParty = false;
     });
   }
 }

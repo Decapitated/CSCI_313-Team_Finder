@@ -9,6 +9,7 @@ import { Party } from '../party';
 export class NavBarComponent implements OnInit {
 
   @Input() party: Party;
+  @Input() joined = false;
 
   constructor() { }
 

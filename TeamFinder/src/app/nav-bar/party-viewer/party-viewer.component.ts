@@ -8,6 +8,7 @@ import { Party } from '../../party';
 })
 export class PartyViewerComponent implements OnInit {
 
+  @Input() joined = false;
   @Input() party: Party;
   /*party: Party = {
     id: 0,
